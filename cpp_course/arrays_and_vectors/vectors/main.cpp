@@ -8,6 +8,7 @@ int main() {
     // vector <char> vowels; // empty
     // vector <char> vowels (5);  // 5 initialized to zero
     vector <char> vowels {'a', 'e', 'i', 'o', 'u'};
+    // bool isEmpty = vowels.empty(); // check is vector empty
 
     cout << vowels[0] << endl;
     cout << vowels[4] << endl;

@@ -16,7 +16,7 @@ int main() {
      *************************/
 
     int8_t exam_score_1 {55}; // short
-    cout << "Exam score is " << exam_score_1 << "(incorect print)" << endl;  // prints: Exam score 7
+    cout << "Exam score is " << exam_score_1 << "(incorrect print)" << endl;  // prints: Exam score 7
     /*
         Why 7?
         int8_t is often treated as a char type:
@@ -24,16 +24,16 @@ int main() {
         ASCII character codes are used in the output, so the value 55 corresponds to the ASCII character 7 (as '7' has an ASCII code of 55).
      */
 
-    int8_t exam_score_2 {55}; // short -> 256
+    int8_t exam_score_2 {55}; // short -> -128 to 127
     std::cout << "Exam score is " << static_cast<int>(exam_score_2) << std::endl;
 
-    int16_t cities {2650}; // int -> 65 536
+    int16_t cities {2650}; // int -> −32,768 to 32,767
     cout << "There were " << cities << " countries represented" << endl;
 
-    int32_t people_in_florida {2000000}; // long -> 4 294 967 296
+    int32_t people_in_florida {2000000}; // long -> −2,147,483,648 to 2,147,483,647
     cout << "There are " << people_in_florida << " people on Florida." << endl;
 
-    int64_t people_on_earth {8'200'000'000}; // long long -> 18 446 744 073 709 551 615
+    int64_t people_on_earth {8'200'000'000}; // long long -> -9'223'372'036'854'775'808 to 9'223'372'036'854'775'807
     cout << "There are " << people_on_earth << " people on Earth." << endl;
 
     /******************************************
