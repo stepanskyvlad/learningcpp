@@ -65,9 +65,11 @@ int main() {
     /*******************************************
      * Size of in bytes
     ********************************************/
-    cout << "large_amount is " << sizeof(large_amount) << " bytes." << endl;
+    cout << "large_amount is " << sizeof(large_amount) << " bytes." << endl;  // 16 bytes.
     //or
-    cout << "people_on_earth is " << sizeof people_on_earth << " bytes." << endl;
+    cout << "people_on_earth is " << sizeof people_on_earth << " bytes." << endl;  // 8 bytes
+    cout << "middle_initial is " << sizeof middle_initial << " bytes." << endl;  // 1 byte
+    cout << "game over is " << sizeof game_over << " bytes." << endl;  // 1 byte
 
     return 0;
 }

@@ -13,8 +13,8 @@ int main() {
     cout << vowels[0] << endl;
     cout << vowels[4] << endl;
 
-    // vector <int> test_scores (3); // 3 elements all initialized to zero
-    // vector <int> test_scores (3, 100); // 3 elements all initialized to 100
+    vector <int> test_scores_all_zeros (3); // 3 elements all initialized to zero
+    vector <int> test_scores_all_hundreds (3, 100); // 3 elements all initialized to 100
     vector <uint16_t> test_scores {100, 99, 98};
 
     cout << "\nTest scores using vector syntax. Bound will be checked" << endl;

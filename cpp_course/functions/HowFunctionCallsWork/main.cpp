@@ -26,7 +26,7 @@ int main() {
 }
 
 /* What typically happens when main calls func1 (or any function calls another) ?
-    There are other ways to acheive the same results :)
+    There are other ways to achieve the same results :)
     
     main:
         push space for the return value

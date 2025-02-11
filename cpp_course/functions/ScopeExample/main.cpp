@@ -46,15 +46,15 @@ int main() {
     
     cout << "Local num is : " << num << " in main" << endl;
 
-    local_example(10);
-    local_example(20);
+    local_example(10);  // start: 1000 end: 10
+    local_example(20);  // start: 1000 end: 20
     
     global_example();
     global_example();
     
-    static_local_example();
-    static_local_example();
-    static_local_example();
+    static_local_example();  // start: 5000 end: 6000
+    static_local_example();  // start: 6000 end: 7000
+    static_local_example();  // start: 7000 end: 8000
 
     cout << endl;
     return 0;

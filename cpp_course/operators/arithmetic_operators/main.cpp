@@ -40,9 +40,5 @@ int main() {
     result_float = num4 / num3;
     cout << "Result_float is: " << result_float << endl; // 0.333333 because num1 and num2 are floats
 
-
-
-
-
     return 0;
 }
