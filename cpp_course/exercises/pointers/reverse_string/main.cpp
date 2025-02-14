@@ -34,6 +34,17 @@ std::string reverse_string(const std::string& str) {
     // return reversed;
 // }
 
+// Change the original string
+// void reverse_in_place(std::string& str) {
+//     int left = 0, right = str.size() - 1;
+    
+//     while (left < right) {
+//         std::swap(str[left], str[right]);
+//         left++;
+//         right--;
+//     }
+// }
+
 int main () {
 
     std::string input = "Hello, World!";
