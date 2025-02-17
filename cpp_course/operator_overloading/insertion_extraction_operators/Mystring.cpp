@@ -64,34 +64,6 @@ Mystring &Mystring::operator=(Mystring &&rhs) {
     return *this;
 }
 
-// Equality
-bool Mystring::operator==(const Mystring &rhs) const {
-    return (std::strcmp(str, rhs.str) == 0);
-}
-
-// Make lowercase
-Mystring Mystring::operator-() const {
-    char *buff = new char[std::strlen(str) + 1 ];
-    std::strcpy(buff, str);
-    for (size_t i=0; i<std::strlen(buff); i++) {
-        buff[i] = std::tolower(buff[i]);
-    }
-    Mystring temp {buff};
-    delete [] buff;
-    return temp;
-}
-
-// Concatenate
-Mystring Mystring::operator+(const Mystring &rhs) const {
-    char *buff = new char[std::strlen(str) + std::strlen(rhs.str) + 1];
-    std::strcpy(buff, str);
-    std::strcat(buff, rhs.str);
-    Mystring temp {buff};
-    delete [] buff;
-    return temp;
-}
-
-
 // Display method
 void Mystring::display() const {
     std::cout << str << " : " << get_length() << std::endl;
@@ -102,3 +74,18 @@ int Mystring::get_length() const { return std::strlen(str); }
  
 // string getter
 const char *Mystring::get_str() const { return str; }
+
+// overloaded insertion operator
+std::ostream &operator<<(std::ostream &os, const Mystring &rhs) {
+    os << rhs.str;
+    return os;
+}
+
+// overloaded extraction operator
+std::istream &operator>>(std::istream &is, Mystring &rhs) {
+    char *buff = new char[1000];
+    is >> buff;
+    rhs = Mystring{buff};
+    delete [] buff;
+    return is;
+}
