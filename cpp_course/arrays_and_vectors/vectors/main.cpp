@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     // vector <char> vowels; // empty
-    // vector <char> vowels (5);  // 5 initialized to zero
+    // vector <char> vowels (5);  // 5 elements initialized to zero
     vector <char> vowels {'a', 'e', 'i', 'o', 'u'};
     // bool isEmpty = vowels.empty(); // check is vector empty
 
@@ -19,6 +19,7 @@ int main() {
 
     cout << "\nTest scores using vector syntax. Bound will be checked" << endl;
     cout << test_scores.at(0) << endl;
+    cout << "-----------------------------" << endl;
 
     // Change the element in the vector
     test_scores.at(1) = 77;
