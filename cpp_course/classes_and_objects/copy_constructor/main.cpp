@@ -1,7 +1,6 @@
 /***************************************************************************************************
 If you do NOT define:
  * Copy Constructor
- * Copy Constructor
  * Copy Assignment Operator
  * Destructor
  * Move Constructor
