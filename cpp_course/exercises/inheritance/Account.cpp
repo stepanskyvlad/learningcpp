@@ -17,8 +17,9 @@ bool Account::withdraw(double amount) {
     if (balance-amount >=0) {
         balance-=amount;
         return true;
-    } else
+    } else {
         return false;
+    }
 }
 
 double Account::get_balance() const {

@@ -6,8 +6,11 @@ Checking_Account::Checking_Account(std::string name, double balance)
     }
 
 bool Checking_Account::withdraw(double amount) {
-    if (Account::deposit(amount)) {
-        balance -= withdrawal_fee;
-    }
+    amount += withdrawal_fee;
+    return Account::withdraw(amount);
+}
 
+std::ostream &operator<<(std::ostream &os, const Checking_Account &account) {
+    os << "[Checking Account: " << account.name << ": " << account.balance << "]";
+    return os;
 }

@@ -9,7 +9,7 @@
 class Checking_Account: public Account {
     friend std::ostream &operator<<(std::ostream &os, const Checking_Account &account);
 private:
-    static constexpr char *def_name = "Unnamed Checking Account";
+    static constexpr const char *def_name = "Unnamed Checking Account";
     static constexpr double def_balance = 0.0;
 protected:
     static constexpr double withdrawal_fee = 1.5;
