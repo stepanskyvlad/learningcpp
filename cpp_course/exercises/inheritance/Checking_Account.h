@@ -16,5 +16,7 @@ protected:
 public:
     Checking_Account(std::string name = def_name, double balance = def_balance);
     bool withdraw(double amount);
+    bool operator-=(double amount);
+    bool operator+=(double amount);
 
 };

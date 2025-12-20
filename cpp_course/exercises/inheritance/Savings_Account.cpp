@@ -18,3 +18,10 @@ std::ostream &operator<<(std::ostream &os, const Savings_Account &account) {
     return os;
 }
 
+bool Savings_Account::operator+=(double amount) {
+    return Savings_Account::deposit(amount);
+}
+
+bool Savings_Account::operator-=(double amount) {
+    return Savings_Account::withdraw(amount);
+}

@@ -30,3 +30,11 @@ std::ostream &operator<<(std::ostream &os, const Account &account) {
     os << "[Account: " << account.name << ": " << account.balance << "]";
     return os;
 }
+
+bool Account::operator+=(double amount) {
+    return Account::deposit(amount);
+}
+
+bool Account::operator-=(double amount) {
+    return Account::withdraw(amount);
+}

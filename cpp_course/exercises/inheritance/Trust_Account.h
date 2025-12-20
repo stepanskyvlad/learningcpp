@@ -25,4 +25,6 @@ public:
     Trust_Account(std::string name = def_name, double balance = def_balance, double int_rate = def_int_rate);
     bool deposit(double amount);
     bool withdraw(double amount);
+    bool operator+=(double amount);
+    bool operator-=(double amount);
 };

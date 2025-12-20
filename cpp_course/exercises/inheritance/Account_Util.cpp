@@ -91,6 +91,28 @@ void withdraw(std::vector<Checking_Account> &accounts, double amount) {
     } 
 }
 
+// Deposits supplied amount to each Checking Account object in the vector using overloaded operator
+void deposit_operator(std::vector<Checking_Account> &accounts, double amount) {
+    std::cout << "\n=== Depositing [+=] to Checking Accounts =================================" << std::endl;
+    for (auto &acc:accounts)  {
+        if (acc += amount) 
+            std::cout << "Deposited " << amount << " to " << acc << std::endl;
+        else
+            std::cout << "Failed Deposit of " << amount << " to " << acc << std::endl;
+    }
+}
+
+// Withdraw amount from each Checking Account object in the vector using overloaded operator
+void withdraw_operator(std::vector<Checking_Account> &accounts, double amount) {
+    std::cout << "\n=== Withdrawing [-=] from Checking Accounts ==============================" <<std::endl;
+    for (auto &acc:accounts)  {
+        if (acc -= amount) 
+            std::cout << "Withdrew " << amount << " from " << acc << std::endl;
+        else
+            std::cout << "Failed Withdrawal of " << amount << " from " << acc << std::endl;
+    } 
+}
+
 // Displays Trust Account objects in a vector of Savings Account objects 
 void display(const std::vector<Trust_Account> &accounts) {
     std::cout << "\n=== Trust Accounts ====================================" << std::endl;

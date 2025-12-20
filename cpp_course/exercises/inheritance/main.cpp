@@ -44,7 +44,9 @@ int main() {
     
     display(check_accounts);
     deposit(check_accounts, 1000);
-    withdraw(check_accounts,2000);
+    for (int i=0; i < 5; i++) {
+        withdraw(check_accounts, 500);
+    }
 
     // Trust
     vector<Trust_Account> trust_accounts;
@@ -55,7 +57,15 @@ int main() {
 
     display(trust_accounts);
     deposit(trust_accounts, 1000);
-    withdraw(trust_accounts, 2000);
+    deposit(trust_accounts, 5000);
+    deposit(trust_accounts, 6000);
+    for (int i=0; i < 5; i++ ) {
+        withdraw(trust_accounts, 2000);
+    }
+
+    display(check_accounts);
+    deposit_operator(check_accounts, 1000);
+    withdraw_operator(check_accounts, 500);
 
     return 0;
 }

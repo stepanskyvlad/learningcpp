@@ -12,6 +12,9 @@ bool Trust_Account::deposit(double amount) {
 }
 
 bool Trust_Account::withdraw(double amount) {
+    if (max_withdrawal_number <= withdrawal_counter) {
+        return false;
+    }
     if (amount < (balance * (withdrawal_percent_checker/100)) && (Savings_Account::withdraw(amount))) {
         withdrawal_counter += 1;
         return true;
@@ -23,4 +26,12 @@ bool Trust_Account::withdraw(double amount) {
 std::ostream &operator<<(std::ostream &os, const Trust_Account &account) {
     os << "[Trust_Account: " << account.name << ": " << account.balance << ", " << account.int_rate << "%]";
     return os;
+}
+
+bool Trust_Account::operator+=(double amount) {
+    return Trust_Account::deposit(amount);
+}
+
+bool Trust_Account::operator-=(double amount) {
+    return Trust_Account::withdraw(amount);
 }

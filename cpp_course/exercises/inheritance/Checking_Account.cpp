@@ -14,3 +14,11 @@ std::ostream &operator<<(std::ostream &os, const Checking_Account &account) {
     os << "[Checking Account: " << account.name << ": " << account.balance << "]";
     return os;
 }
+
+bool Checking_Account::operator-=(double amount) {
+    return Checking_Account::withdraw(amount);
+}
+
+bool Checking_Account::operator+=(double amount) {
+    return Checking_Account::deposit(amount);
+}

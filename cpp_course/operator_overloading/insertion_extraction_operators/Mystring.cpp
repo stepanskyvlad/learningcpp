@@ -1,5 +1,4 @@
 #include <cstring>
-#include <iostream>
 #include "Mystring.h"
 
 // No-args constructor

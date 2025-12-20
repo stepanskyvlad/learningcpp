@@ -18,5 +18,7 @@ public:
     bool deposit(double amount);
     bool withdraw(double amount);
     double get_balance() const;
+    bool operator+=(double amount);
+    bool operator-=(double amount);
 };
 #endif
