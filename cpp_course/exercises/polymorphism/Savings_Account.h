@@ -15,6 +15,7 @@ public:
     virtual ~Savings_Account() = default;
     virtual bool deposit(double amount) override;
     virtual bool withdraw(double amount) override;
+    virtual void print(std::ostream &os) const override;
 };
 
 #endif // _SAVINGS_ACCOUNT_H_

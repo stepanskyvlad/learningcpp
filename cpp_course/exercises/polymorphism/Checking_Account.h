@@ -15,7 +15,7 @@ public:
     virtual ~Checking_Account() = default;
     virtual bool withdraw(double amount) override;
     virtual bool deposit(double amount) override;
-    // Inherits the Account::deposit method
+    virtual void print(std::ostream &os) const override;
 };
 
 #endif // _CHECKING_ACCOUNT_H_
