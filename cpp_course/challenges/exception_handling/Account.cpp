@@ -3,13 +3,13 @@
 Account::Account(std::string name, double balance) 
     : name{name}, balance{balance} {
         if (balance < 0.0)
-            throw IllegalBalanceException();
+            throw IllegalBalanceException(balance);
 }
 
 bool Account::deposit(double amount) {
-    if (amount < 0) 
-        return false;
-    else {
+    if (amount < 0) {
+        throw NegativeDepositeException(amount);
+    } else {
         balance += amount;
         return true;
     }
@@ -19,8 +19,9 @@ bool Account::withdraw(double amount) {
     if (balance-amount >=0) {
         balance-=amount;
         return true;
-    } else
-        return false;
+    } else {
+        throw InsufficentFundsException(amount);
+    }
 }
 
  void Account::print(std::ostream &os) const {
