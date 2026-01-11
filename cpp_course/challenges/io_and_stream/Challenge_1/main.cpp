@@ -23,6 +23,10 @@ struct Tours {
     std::vector<Country> countries;
 };
 
+void ruler() {
+    std::cout << "12345678901234567890123456789012345678901234567890123456789012345678901234567890" << std::endl;
+}
+
 int main()
 {
     Tours tours
@@ -57,14 +61,23 @@ int main()
     };
 
     // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
+    ruler();
+    std::cout << std::endl;
+    std::cout << std::setw(55) << std::right << tours.title << std::endl;
+    std::cout << std::endl;
+    std::cout << std::setw(20) << std::left << "Country";
+    std::cout << std::setw(20) << std::left << "City"; 
+    std::cout << std::setw(20) << std::right << "Population";
+    std::cout << std::setw(20) << std::right << "Price" << std::endl;
+    std::cout << std::setfill('-') << std::setw(80) << '-' << std::endl;
+    std::cout << std::setfill(' ');
+    std::cout << std::setprecision(2) << std::fixed;
     for(auto country : tours.countries) {   // loop through the countries
-        std::cout << country.name << std::endl;
-        for(auto city : country.cities) {       // loop through the cities for each country
-            std::cout << "\t" << city.name 
-                          << "\t" << city.population 
-                          << "\t" << city.cost 
-                          << std::endl;
+        for(size_t i=0; i<country.cities.size(); i++) {       // loop through the cities for each country
+            std::cout << std::setw(20) << std::left << ((i==0) ? country.name : "");
+            std::cout << std::setw(20) << std::left << country.cities.at(i).name;
+            std::cout << std::setw(20) << std::right << country.cities.at(i).population;
+            std::cout << std::setw(20) << std::right << country.cities.at(i).cost << std::endl;
         }
     }
 
